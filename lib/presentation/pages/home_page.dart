@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather/i18n/strings.g.dart';
+import 'package:weather/config/i18n/strings.g.dart';
 import 'package:weather/presentation/blocs/connectivity_bloc/connectivity_bloc.dart';
 import 'package:weather/presentation/blocs/connectivity_bloc/connectivity_state.dart';
 import 'package:weather/presentation/blocs/current_city_bloc/current_city_bloc.dart';
