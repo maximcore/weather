@@ -1,4 +1,4 @@
 # weather
 
-Test project 
+Test weather app clone based on Openweathermap api  
 
