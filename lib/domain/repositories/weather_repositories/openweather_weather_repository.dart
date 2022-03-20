@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:location/location.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
+import 'package:weather/config/update_time.dart';
 import 'package:weather/domain/entities/weather/day_weather_entity.dart';
 import 'package:weather/domain/entities/weather/todays_weather_entity.dart';
 import 'package:weather/domain/entities/weather/weather_entity.dart';
@@ -54,8 +55,7 @@ class OpenweatherWeatherRepository implements WeatherRepository {
       final weatherJson = await store.record('weather').get(db) as Map<String, dynamic>;
       weather = WeatherEntity.fromJson(weatherJson);
       final time = await store.record('time').get(db) as int;
-      print('time = ${DateTime.fromMillisecondsSinceEpoch(time)}');
-
+      updateTime = UpdateTime.whenUpdated(time);
     }
     return weather;
   }
