@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocode/geocode.dart';
 import 'package:location/location.dart';
+import 'package:weather/config/update_time.dart';
 import 'package:weather/presentation/blocs/connectivity_bloc/connectivity_bloc.dart';
 import 'package:weather/presentation/blocs/connectivity_bloc/connectivity_state.dart';
 import 'package:weather/presentation/blocs/current_city_bloc/current_city_bloc.dart';
@@ -35,9 +36,6 @@ class ReadyWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // connectivityState.status == ConnectivityStatus.connected
-            //     ? const Icon(Icons.wifi)
-            //     : const Icon(Icons.wifi_off),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -84,6 +82,9 @@ class ReadyWidget extends StatelessWidget {
               ],
             ),
             CurrentWeather(weatherEntity: state.weather!),
+            connectivityState.status == ConnectivityStatus.disconnected
+                ? Text(updateTime)
+                : const SizedBox(),
             const Divider(),
             SizedBox(
               height: 96,
