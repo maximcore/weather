@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'current_city_state.dart';
 
@@ -177,23 +175,27 @@ class _$_CurrentCityState implements _CurrentCityState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _CurrentCityState &&
-            const DeepCollectionEquality().equals(other.weather, weather) &&
-            const DeepCollectionEquality()
-                .equals(other.weekWeather, weekWeather) &&
-            const DeepCollectionEquality()
-                .equals(other.todaysWeather, todaysWeather) &&
-            const DeepCollectionEquality().equals(other.status, status));
+        (other is _CurrentCityState &&
+            (identical(other.weather, weather) ||
+                const DeepCollectionEquality()
+                    .equals(other.weather, weather)) &&
+            (identical(other.weekWeather, weekWeather) ||
+                const DeepCollectionEquality()
+                    .equals(other.weekWeather, weekWeather)) &&
+            (identical(other.todaysWeather, todaysWeather) ||
+                const DeepCollectionEquality()
+                    .equals(other.todaysWeather, todaysWeather)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(weather),
-      const DeepCollectionEquality().hash(weekWeather),
-      const DeepCollectionEquality().hash(todaysWeather),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(weather) ^
+      const DeepCollectionEquality().hash(weekWeather) ^
+      const DeepCollectionEquality().hash(todaysWeather) ^
+      const DeepCollectionEquality().hash(status);
 
   @JsonKey(ignore: true)
   @override
@@ -209,13 +211,14 @@ abstract class _CurrentCityState implements CurrentCityState {
       required CurrentCityStatus status}) = _$_CurrentCityState;
 
   @override // add list of the weather for next 7 days
-  WeatherEntity? get weather;
+  WeatherEntity? get weather => throw _privateConstructorUsedError;
   @override
-  List<DayWeatherEntity>? get weekWeather;
+  List<DayWeatherEntity>? get weekWeather => throw _privateConstructorUsedError;
   @override
-  List<TodaysWeatherEntity>? get todaysWeather;
+  List<TodaysWeatherEntity>? get todaysWeather =>
+      throw _privateConstructorUsedError;
   @override
-  CurrentCityStatus get status;
+  CurrentCityStatus get status => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CurrentCityStateCopyWith<_CurrentCityState> get copyWith =>
